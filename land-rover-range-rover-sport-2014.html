@@ -408,7 +408,7 @@ const NEGOCIO = {
   stockCsv: "",
   opiniones: "https://www.google.com/maps/search/?api=1&query=AutoSport+VM+Andorra+Teruel",
   direccion: "C. Estación de Atocha, 36 · 44500 Andorra (Teruel)",
-  horario: [["Lunes a viernes", "10:00–14:00 · 16:30–20:00"], ["Sábado", "10:00–14:00"], ["Domingo", "Cerrado"]]
+  horario: []  // ej.: [["Lunes a viernes", "10:00–14:00 · 16:30–20:00"], ["Sábado", "10:00–14:00"]]
 };
 
 /* ===== Stock (generado desde data/stock.json; se puede sustituir por la hoja de Google) ===== */
@@ -648,7 +648,7 @@ function bloqueVisita() {
       <dl>
         <div><dt>Dirección</dt><dd>${esc(NEGOCIO.direccion)}</dd></div>
         <div><dt>Teléfono y WhatsApp</dt><dd class="num">${esc(NEGOCIO.telefono)}</dd></div>
-        <div><dt>Horario (pendiente de confirmar)</dt><dd><table class="horario">${NEGOCIO.horario.map(h => `<tr><td>${h[0]}</td><td>${h[1]}</td></tr>`).join("")}</table></dd></div>
+        <div><dt>Horario</dt><dd>${NEGOCIO.horario.length ? `<table class="horario">${NEGOCIO.horario.map(h => `<tr><td>${h[0]}</td><td>${h[1]}</td></tr>`).join("")}</table>` : "Escríbenos o llámanos y quedamos cuando te venga bien."}</dd></div>
       </dl>
       <a class="btn btn-wa" href="${waLink("Hola, quiero pasar a ver coches. ¿Cuándo os viene bien?")}">Pedir cita por WhatsApp</a>
       <a class="btn btn-linea" href="${NEGOCIO.opiniones}">Ver opiniones en Google</a>
