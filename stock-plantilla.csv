@@ -1,0 +1,15 @@
+id,marca,modelo,version,anio,km,comb,cambio,cv,carroceria,dgt,precio,estado,color,plazas,itv,revision,duenos,video,instagram,fotos
+1,Ford,Kuga,2.0 TDCi 2WD Trend,2009,188250,Diésel,Manual,136,suv,B,6999,disponible,Blanco,,,,,,https://www.instagram.com/p/De_vmWiDRq4/,6
+2,Nissan,Qashqai,1.5 dCi 360 S 4x2,2015,150000,Diésel,Manual,110,suv,B,10200,disponible,Blanco,,,,,,https://www.instagram.com/p/DetwlmNDeSy/,6
+3,Audi,A3 Sportback,1.6 TDI S tronic Advanced,2015,208600,Diésel,Automático,110,compacto,C,9999,disponible,Blanco,,,,,,https://www.instagram.com/p/DeM3_xkDWcR/,6
+4,Nissan,Qashqai,1.6 dCi Tekna Sport 4x2,2012,159300,Diésel,Manual,130,suv,B,8999,disponible,Rojo,,,,,,https://www.instagram.com/p/DeOuEzGjf5b/,6
+5,Toyota,RAV4,120D AWD Advance,2014,251180,Diésel,Manual,124,suv,B,9999,disponible,Negro,,,,,,https://www.instagram.com/p/Dd3ey9KEZE1/,6
+6,Chevrolet,Captiva,2.0 VCDi LS 7 plazas,2010,200000,Diésel,Consultar,127,suv,B,4999,disponible,Negro,7,,,,,,6
+7,Volkswagen,Golf,Advance 2.0 TDI DSG,2016,165800,Diésel,Automático,150,compacto,C,11999,disponible,Negro,,,,,,https://www.instagram.com/p/Ddrh3vIkf9s/,6
+8,Renault,Scénic,BOSE Energy dCi 130,2014,142800,Diésel,Consultar,130,monovolumen,,7500,disponible,Gris,,,,,,,6
+9,Hyundai,ix35,1.7 CRDi Classic Sky 4x2,2011,112400,Diésel,Consultar,116,suv,,8500,disponible,Blanco,,,,,,,6
+10,Opel,Zafira Tourer,1.6 CDTi 136 CV Selective,2016,152800,Diésel,Consultar,136,monovolumen,C,8499,disponible,Plata,,,,,,,6
+11,Volkswagen,Golf,Advance 1.6 TDI,2015,193935,Diésel,Consultar,105,compacto,,8600,disponible,Blanco,,,,,,,6
+12,Ford,Mondeo,2.2 TDCi Trend,2005,214500,Diésel,Consultar,155,berlina,,2499,disponible,Gris,,,,,,,6
+13,Peugeot,5008,Premium 1.6 HDi 110,2010,186000,Diésel,Consultar,110,monovolumen,C,5300,disponible,Plata,,,,,,,6
+14,Land Rover,Range Rover Sport,4.4 SDV8 HSE,2014,198000,Diésel,Consultar,339,suv,,17500,disponible,Rojo,,,,,,,6

@@ -3,8 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AutoSport VM</title>
-<meta name="description" content="Compraventa de coches de ocasión AutoSport VM. Catálogo actualizado, garantía y atención por WhatsApp.">
+<title>AutoSport VM · Coches de segunda mano en Andorra (Teruel)</title>
+<meta name="description" content="Compraventa de coches de ocasión en Andorra, Teruel. 14 coches con garantía de 12 meses desde 2.499 €. Te buscamos el coche que quieras. Pregunta por WhatsApp.">
+<link rel="canonical" href="https://javicantos1998.github.io/autosportvm/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AutoSport VM">
+<meta property="og:title" content="AutoSport VM · Coches de segunda mano en Andorra (Teruel)">
+<meta property="og:description" content="Compraventa de coches de ocasión en Andorra, Teruel. 14 coches con garantía de 12 meses desde 2.499 €. Te buscamos el coche que quieras. Pregunta por WhatsApp.">
+<meta property="og:url" content="https://javicantos1998.github.io/autosportvm/">
+<meta property="og:image" content="https://javicantos1998.github.io/autosportvm/fotos/c14-1.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "AutoDealer", "name": "AutoSport VM", "url": "https://javicantos1998.github.io/autosportvm/", "telephone": "+34641308956", "image": "https://javicantos1998.github.io/autosportvm/fotos/c14-1.jpg", "address": {"@type": "PostalAddress", "streetAddress": "C. Estación de Atocha, 36", "postalCode": "44500", "addressLocality": "Andorra", "addressRegion": "Teruel", "addressCountry": "ES"}, "areaServed": ["Andorra", "Alcañiz", "Calanda", "Bajo Aragón", "Teruel"], "sameAs": ["https://www.instagram.com/autosportvm_/"]}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -180,7 +191,7 @@ section.bloque { padding: 56px 0; }
 .mapa strong { color: var(--tinta); display: block; font-size: 18px; }
 
 /* Catálogo */
-.catalogo { display: grid; grid-template-columns: 270px 1fr; gap: 28px; align-items: start; padding: 36px 0 64px; }
+.catalogo { display: grid; grid-template-columns: 270px 1fr; gap: 28px; align-items: start; padding-top: 36px; padding-bottom: 64px; }
 .filtros { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; display: grid; gap: 14px; position: sticky; top: 88px; }
 .filtros h2 { font-size: 22px; font-style: italic; }
 .chips-sel { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -196,7 +207,7 @@ section.bloque { padding: 56px 0; }
 .filtros-movil { display: none; }
 
 /* Ficha */
-.ficha { padding: 28px 0 64px; }
+.ficha { padding-top: 28px; padding-bottom: 64px; }
 .migas { font-size: 15px; color: var(--gris); margin-bottom: 16px; }
 .migas a { color: var(--gris); }
 .ficha-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 32px; align-items: start; }
@@ -230,13 +241,65 @@ section.bloque { padding: 56px 0; }
 .check input { width: 20px; height: 20px; margin-top: 2px; flex: none; }
 .aviso-ok { background: #E8F6EE; border: 1px solid #A9DDBE; color: #14532D; border-radius: 8px; padding: 12px 14px; font-size: 15px; }
 .aviso-error { color: var(--rojo-hover); font-size: 14px; font-weight: 600; }
-.pagina { padding: 40px 0 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.pagina { padding-top: 40px; padding-bottom: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .pagina h1 { font-size: clamp(32px, 4vw, 46px); font-style: italic; font-weight: 800; }
 .pagina .texto p + p { margin-top: 12px; }
 .lista-check { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 10px; }
 .lista-check li { padding-left: 28px; position: relative; }
 .lista-check li::before { content: ""; position: absolute; left: 0; top: 7px; width: 14px; height: 8px; border-left: 3px solid var(--rojo); border-bottom: 3px solid var(--rojo); transform: rotate(-45deg); }
 
+/* Favoritos */
+.coche { position: relative; }
+.enlace-coche { display: flex; flex-direction: column; flex: 1; text-decoration: none; color: inherit; }
+.fav { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(255,255,255,.94); display: grid; place-items: center; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+.fav svg { width: 22px; height: 22px; }
+.fav path { fill: none; stroke: var(--tinta); stroke-width: 2; }
+.fav[aria-pressed="true"] path { fill: var(--rojo); stroke: var(--rojo); }
+.fav-panel { position: static; box-shadow: none; border: 1.5px solid var(--linea); width: 46px; height: 46px; }
+.n-fav { background: var(--rojo); color: #fff; border-radius: 999px; font-size: 12px; padding: 1px 7px; margin-left: 4px; }
+.n-fav:empty { display: none; }
+.comparar { overflow-x: auto; background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); margin-top: 24px; }
+.comparar table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 16px; }
+.comparar th, .comparar td { padding: 12px 16px; border-bottom: 1px solid var(--linea); text-align: left; font-variant-numeric: tabular-nums; }
+.comparar thead th { font-family: var(--f-display); font-size: 18px; font-style: italic; vertical-align: bottom; }
+.comparar thead img { width: 100%; max-width: 200px; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
+.comparar tbody th { color: var(--gris); font-weight: 600; width: 160px; }
+.comparar .mejor { color: #13703A; font-weight: 700; }
+.comparar .mejor::after { content: " · mejor"; font-size: 13px; font-weight: 600; }
+/* Vendidos */
+.vendidos { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+.vendido { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 14px 16px; display: flex; gap: 12px; align-items: center; }
+.vendido .sello { flex: none; font: 800 13px var(--f-display); font-style: italic; color: var(--blanco); background: var(--tinta); border-radius: 6px; padding: 5px 8px; transform: rotate(-4deg); }
+.vendido b { display: block; }
+.vendido span { color: var(--gris); font-size: 15px; }
+/* Estado del coche */
+.estado-lista { margin: 0; display: grid; gap: 10px; }
+.estado-lista div { display: flex; gap: 10px; }
+.estado-lista dt { font-weight: 700; min-width: 170px; }
+.estado-lista dd { margin: 0; }
+.acciones-sec { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+/* Cartel QR */
+#cartel { position: fixed; inset: 0; background: rgba(10,11,13,.75); z-index: 50; display: none; place-items: center; padding: 16px; overflow: auto; }
+#cartel.abierto { display: grid; }
+.cartel-hoja { background: #fff; color: #111; width: min(560px, 100%); border-radius: 12px; overflow: hidden; }
+.cartel-cab { background: var(--asfalto); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
+.cartel-cab img { height: 54px; width: auto; }
+.cartel-cab span { color: #fff; font: 700 16px var(--f-display); font-style: italic; }
+.cartel-cuerpo { padding: 24px; display: grid; gap: 14px; }
+.cartel-cuerpo h2 { font-size: 34px; font-style: italic; font-weight: 800; }
+.cartel-cuerpo .precio { font-size: 52px; color: var(--rojo); }
+.cartel-qr { display: flex; gap: 18px; align-items: center; border-top: 2px solid #111; padding-top: 16px; }
+.cartel-qr #qr { flex: none; width: 150px; }
+.cartel-qr #qr img, .cartel-qr #qr canvas, .cartel-qr #qr svg { width: 150px !important; height: 150px !important; display: block; }
+.cartel-qr p { font-size: 17px; }
+.cartel-botones { display: flex; gap: 10px; justify-content: flex-end; padding: 0 24px 20px; }
+@media print {
+  body.imprimiendo > *:not(#cartel) { display: none !important; }
+  body.imprimiendo #cartel { position: static; background: none; display: block; padding: 0; }
+  body.imprimiendo .cartel-botones { display: none; }
+  body.imprimiendo .cartel-hoja { width: 100%; border-radius: 0; }
+  .cartel-cab { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
 /* Pie */
 .pie { background: var(--asfalto); color: #B9BDC4; padding: 40px 0 28px; font-size: 15px; }
 .pie .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; }
@@ -282,16 +345,17 @@ section.bloque { padding: 56px 0; }
 </style>
 </head>
 <body>
-<div class="proto" role="note">Prototipo: stock y fotos de los anuncios de Coches.net (9/11/2026). Horario pendiente.</div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="AutoSport VM, ir al inicio"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjE1MCA2MCAxNTMwIDQ4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNpbHZlciIgeDE9IjAiIHkxPSIyMzAiIHgyPSIwIiB5Mj0iNDAwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNDgiIHN0b3AtY29sb3I9IiNlNmU4ZWIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjUyIiBzdG9wLWNvbG9yPSIjYTlhZGIzIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Q5ZGNlMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0icmVkIiB4MT0iMCIgeTE9IjIzMCIgeDI9IjAiIHkyPSI0MDAiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmY0YTRhIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC40OCIgc3RvcC1jb2xvcj0iI2UzMjQyZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNTIiIHN0b3AtY29sb3I9IiNiMzE0MWQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDgxZjI5Ii8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJzd29vc2hTaWx2ZXIiIHgxPSIwIiB4Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4yNSIgc3RvcC1jb2xvcj0iI2Q5ZGNlMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuNyIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM5YWEwYTYiIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJzd29vc2hSZWQiIHgxPSIwIiB4Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2UzMjQyZSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4zIiBzdG9wLWNvbG9yPSIjZTMyNDJlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2UzMjQyZSIgc3RvcC1vcGFjaXR5PSIwLjEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InJ1bGUiIHgxPSIwIiB4Mj0iMSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Q5ZGNlMCIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMC4xNSIgc3RvcC1jb2xvcj0iI2Q5ZGNlMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjAuODUiIHN0b3AtY29sb3I9IiNkOWRjZTAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDlkY2UwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cmFkaWFsR3JhZGllbnQgaWQ9ImJnIiBjeD0iMC41IiBjeT0iMC40NSIgcj0iMC43NSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzFiMWQyMiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNTA1MDYiLz4KICAgIDwvcmFkaWFsR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InN0cmVhayIgeDE9IjAiIHgyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYzMxMjFjIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIwLjYiIHN0b3AtY29sb3I9IiNjMzEyMWMiIHN0b3Atb3BhY2l0eT0iMC41NSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNjMzEyMWMiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9ImJsdXIiIHg9Ii0yMCUiIHk9Ii01MCUiIHdpZHRoPSIxNDAlIiBoZWlnaHQ9IjIwMCUiPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjkiLz48L2ZpbHRlcj4KICA8L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUsMCkiPgogIAogIDxwYXRoIGQ9Ik0yOTAgMjUwIEMgNTYwIDEwMCwgMTAyMCA4MCwgMTM5MCAxODUKICAgICAgICAgICBDIDEwMzAgMTE1LCA2MDAgMTM1LCAyOTAgMjUwIFoiIGZpbGw9InVybCgjc3dvb3NoU2lsdmVyKSIvPgogIDxwYXRoIGQ9Ik0zODAgMjUwIEMgNjQwIDE0MCwgMTA1MCAxMzAsIDE0NDAgMjEwCiAgICAgICAgICAgQyAxMDYwIDE2MiwgNjgwIDE3NSwgMzgwIDI1MCBaIiBmaWxsPSJ1cmwoI3N3b29zaFJlZCkiLz4KICA8cGF0aCBkPSJNMjcxLjA0NDQgMzcxLjQ4SDIxMC43ODQ0TDE5NC44NSA0MDAuMEgxNTMuNjhMMjQ3LjYyMTIgMjM4LjU0SDI5My4xNjEyTDMxNi4wNiA0MDAuMEgyNzQuNDNaTTI2Ny42MDM2MDAwMDAwMDAwMyAzNDEuMTIgMjYwLjU5NzggMjgyLjAxIDIyNy44MTM2IDM0MS4xMlpNNDEyLjUzMTIgMjM4LjU0IDM5MS4yNzkyIDMzNS4xNFEzODguMDkxNCAzNDkuNjMgMzkzLjUwMTAwMDAwMDAwMDAzIDM1Ny40NVEzOTguOTEwNjAwMDAwMDAwMDQgMzY1LjI3IDQxMi43MTA2IDM2NS4yN1E0MjYuNTEwNiAzNjUuMjcgNDM1LjU5MSAzNTcuNDVRNDQ0LjY3MTQgMzQ5LjYzIDQ0Ny44NTkyIDMzNS4xNEw0NjkuMTExMjAwMDAwMDAwMDUgMjM4LjU0SDUwOC40NDEyTDQ4Ny4yMzk4IDMzNC45MDk5OTk5OTk5OTk5N1E0ODIuNDgzNCAzNTYuNTMgNDY5Ljk5NDQwMDAwMDAwMDA0IDM3MS40OFE0NTcuNTA1NCAzODYuNDMgNDQwLjMxMDYgMzk0LjAyUTQyMy4xMTU4MDAwMDAwMDAwNCA0MDEuNjEgNDA0LjAyNTggNDAxLjYxUTM4NC45MzU4MDAwMDAwMDAwMyA0MDEuNjEgMzcxLjUxNTMgMzk0LjEzNVEzNTguMDk0OCAzODYuNjYgMzUyLjY2OTEgMzcxLjU5NVEzNDcuMjQzNCAzNTYuNTMgMzUxLjk5OTggMzM0LjkwOTk5OTk5OTk5OTk3TDM3My4yMDEyMDAwMDAwMDAwMyAyMzguNTRaTTY1Ni43OTEyIDIzOC41NCA2NDkuODU5IDI3MC4wNDk5OTk5OTk5OTk5NUg2MDcuMDc5MDAwMDAwMDAwMUw1NzguNDkgNDAwLjBINTM5LjE2TDU2Ny43NDkgMjcwLjA0OTk5OTk5OTk5OTk1SDUyNC45NjlMNTMxLjkwMTIgMjM4LjU0Wk02NTYuODQxOCAzMTguODFRNjYyLjA1MzYgMjk1LjEyIDY3Ny4zNTc4IDI3Ni4yNlE2OTIuNjYyIDI1Ny40IDcxMy45NjQ2IDI0Ni44MlE3MzUuMjY3MiAyMzYuMjM5OTk5OTk5OTk5OTggNzU4LjAzNzIgMjM2LjIzOTk5OTk5OTk5OTk4UTc4MC44MDcyIDIzNi4yMzk5OTk5OTk5OTk5OCA3OTcuNDU0NiAyNDYuODJRODE0LjEwMiAyNTcuNCA4MjAuODc3OCAyNzYuMjZRODI3LjY1MzYgMjk1LjEyIDgyMi40NDE4IDMxOC44MVE4MTcuMjMgMzQyLjUgODAyLjAxNTUgMzYxLjQ3NVE3ODYuODAwOTk5OTk5OTk5OSAzODAuNDUgNzY1LjYxMzQgMzkxLjAzUTc0NC40MjU4IDQwMS42MSA3MjEuNjU1OCA0MDEuNjFRNjk4Ljg4NTggNDAxLjYxIDY4Mi4yMzg0IDM5MS4wM1E2NjUuNTkxIDM4MC40NSA2NTguNjEwNSAzNjEuNDc1UTY1MS42MyAzNDIuNSA2NTYuODQxOCAzMTguODFaTTc4Mi40MjE4IDMxOC44MVE3ODcuMTI3NiAyOTcuNDIgNzc4LjMyMDg5OTk5OTk5OTkgMjg0LjY1NVE3NjkuNTE0MiAyNzEuODkgNzUwLjE5NDIgMjcxLjg5UTczMC42NDQyIDI3MS44OSA3MTYuMjQ2MiAyODQuNTM5OTk5OTk5OTk5OTZRNzAxLjg0ODIgMjk3LjE5IDY5Ny4wOTE4IDMxOC44MVE2OTIuMzg2IDM0MC4yIDcwMS4xOTI3MDAwMDAwMDAxIDM1Mi45NjUwMDAwMDAwMDAwM1E3MDkuOTk5NCAzNjUuNzMgNzI5LjU0OTQgMzY1LjczUTc0OC44Njk0IDM2NS43MyA3NjMuMzE4IDM1Mi44NVE3NzcuNzY2NiAzMzkuOTcgNzgyLjQyMTggMzE4LjgxWiIgZmlsbD0idXJsKCNzaWx2ZXIpIi8+CiAgPHBhdGggZD0iTTgzOS4zNTYgMzUxLjdIODgxLjIxNTk5OTk5OTk5OTlRODgwLjE2MjU5OTk5OTk5OTkgMzYwLjY3IDg4NC40MTUyOTk5OTk5OTk5IDM2NS4zODVRODg4LjY2Nzk5OTk5OTk5OTkgMzcwLjEgODk3LjE3Nzk5OTk5OTk5OTkgMzcwLjFROTA1LjkxNzk5OTk5OTk5OTkgMzcwLjEgOTExLjg2MzQ5OTk5OTk5OTkgMzY2LjA3NTAwMDAwMDAwMDA1UTkxNy44MDkgMzYyLjA1IDkxOS4zNzc1OTk5OTk5OTk5IDM1NC45MlE5MjAuNjkzMTk5OTk5OTk5OSAzNDguOTQgOTE3LjUyODM5OTk5OTk5OTkgMzQ1LjAzUTkxNC4zNjM1OTk5OTk5OTk5IDM0MS4xMiA5MDkuMDU1MTk5OTk5OTk5OSAzMzguNTkwMDAwMDAwMDAwMDNROTAzLjc0Njc5OTk5OTk5OTkgMzM2LjA2IDg5My42NDUxOTk5OTk5OTk5IDMzMi44NDAwMDAwMDAwMDAwM1E4NzkuMDY3Nzk5OTk5OTk5OSAzMjguMDEgODcwLjI0MDM5OTk5OTk5OTkgMzIzLjE4UTg2MS40MTI5OTk5OTk5OTk5IDMxOC4zNSA4NTYuMzU3NTk5OTk5OTk5OSAzMDguOTJRODUxLjMwMjIgMjk5LjQ5IDg1NC42NDE3OTk5OTk5OTk5IDI4NC4zMVE4NTkuNjAwNiAyNjEuNzcgODc4LjczODkgMjQ5LjAwNVE4OTcuODc3MTk5OTk5OTk5OSAyMzYuMjM5OTk5OTk5OTk5OTggOTI0LjA5NzE5OTk5OTk5OTkgMjM2LjIzOTk5OTk5OTk5OTk4UTk1MC43NzcyIDIzNi4yMzk5OTk5OTk5OTk5OCA5NjQuMjk4OSAyNDkuMDA1UTk3Ny44MjA1OTk5OTk5OTk5IDI2MS43NyA5NzMuOTYxMiAyODQuNTM5OTk5OTk5OTk5OTZIOTMxLjQxMTE5OTk5OTk5OTlROTMyLjY3MTU5OTk5OTk5OTkgMjc2LjcyIDkyOC4zNjgyOTk5OTk5OTk5IDI3Mi4yMzVROTI0LjA2NDk5OTk5OTk5OTkgMjY3Ljc1IDkxNS43ODUgMjY3Ljc1UTkwOC42NTUgMjY3Ljc1IDkwMy40NTAxIDI3MS41NDQ5OTk5OTk5OTk5NlE4OTguMjQ1MiAyNzUuMzQgODk2LjY3NjU5OTk5OTk5OTkgMjgyLjQ3UTg5NC45NTYyIDI5MC4yODk5OTk5OTk5OTk5NiA5MDEuMzU0OCAyOTQuNjU5OTk5OTk5OTk5OTdROTA3Ljc1MzM5OTk5OTk5OTkgMjk5LjAzIDkyMi4yODAxOTk5OTk5OTk5IDMwNC4wOVE5MzYuNzU2NCAzMDkuMzggOTQ1LjQ2ODggMzE0LjIxUTk1NC4xODEyIDMxOS4wMzk5OTk5OTk5OTk5NiA5NTkuMjg3MiAzMjguMjRROTY0LjM5MzIgMzM3LjQ0IDk2MS4yMDUzOTk5OTk5OTk5IDM1MS45M1E5NTguMTY5NCAzNjUuNzMgOTQ4LjY3NSAzNzcuMFE5MzkuMTgwNTk5OTk5OTk5OSAzODguMjcgOTI0LjM3MzIgMzk0Ljk0UTkwOS41NjU4IDQwMS42MSA4OTEuMzk1Nzk5OTk5OTk5OSA0MDEuNjFRODczLjY4NTggNDAxLjYxIDg2MC45MjA3OTk5OTk5OTk5IDM5NS44NlE4NDguMTU1Nzk5OTk5OTk5OSAzOTAuMTEgODQyLjI0MDIgMzc4Ljg0MDAwMDAwMDAwMDAzUTgzNi4zMjQ1OTk5OTk5OTk5IDM2Ny41NyA4MzkuMzU2IDM1MS43Wk0xMDU1Ljg0MTE5OTk5OTk5OTggMzQyLjA0SDEwMzEuNDYxMkwxMDE4LjcwOTk5OTk5OTk5OTkgNDAwLjBIOTc5LjM3OTk5OTk5OTk5OTlMMTAxNC45MDExOTk5OTk5OTk5IDIzOC41NEgxMDc4LjYxMTE5OTk5OTk5OThRMTA5Ny45MzEyIDIzOC41NCAxMTA5LjgwMzggMjQ1LjIwOTk5OTk5OTk5OTk4UTExMjEuNjc2Mzk5OTk5OTk5OCAyNTEuODggMTEyNS43NjU4IDI2My42MVExMTI5Ljg1NTIgMjc1LjM0IDExMjYuNTE1NiAyOTAuNTJRMTEyMy40Mjg5OTk5OTk5OTk5IDMwNC41NSAxMTE0LjQzMzcgMzE2LjE2NDk5OTk5OTk5OTk2UTExMDUuNDM4NCAzMjcuNzggMTA5MC41Mjk3OTk5OTk5OTk4IDMzNC45MDk5OTk5OTk5OTk5N1ExMDc1LjYyMTE5OTk5OTk5OTggMzQyLjA0IDEwNTUuODQxMTk5OTk5OTk5OCAzNDIuMDRaTTEwODYuNDk1NiAyOTAuNTJRMTA4OC42MjA4IDI4MC44NiAxMDg0LjI2NDYgMjc1LjU3UTEwNzkuOTA4Mzk5OTk5OTk5OCAyNzAuMjggMTA2OC42MzgzOTk5OTk5OTk4IDI3MC4yOEgxMDQ3LjI0ODRMMTAzOC4zNDI4IDMxMC43NkgxMDU5LjczMjhRMTA3MS4wMDI4IDMxMC43NiAxMDc3LjY4NjYgMzA1LjQ3UTEwODQuMzcwMzk5OTk5OTk5OCAzMDAuMTggMTA4Ni40OTU2IDI5MC41MlpNMTEzOC42OTE3OTk5OTk5OTk4IDMxOC44MVExMTQzLjkwMzU5OTk5OTk5OTkgMjk1LjEyIDExNTkuMjA3Nzk5OTk5OTk5NyAyNzYuMjZRMTE3NC41MTE5OTk5OTk5OTk3IDI1Ny40IDExOTUuODE0NTk5OTk5OTk5NyAyNDYuODJRMTIxNy4xMTcxOTk5OTk5OTk3IDIzNi4yMzk5OTk5OTk5OTk5OCAxMjM5Ljg4NzE5OTk5OTk5OTcgMjM2LjIzOTk5OTk5OTk5OTk4UTEyNjIuNjU3MTk5OTk5OTk5OSAyMzYuMjM5OTk5OTk5OTk5OTggMTI3OS4zMDQ2IDI0Ni44MlExMjk1Ljk1MTk5OTk5OTk5OTggMjU3LjQgMTMwMi43Mjc3OTk5OTk5OTk3IDI3Ni4yNlExMzA5LjUwMzU5OTk5OTk5OTggMjk1LjEyIDEzMDQuMjkxNzk5OTk5OTk5NyAzMTguODFRMTI5OS4wNzk5OTk5OTk5OTk3IDM0Mi41IDEyODMuODY1NDk5OTk5OTk5OSAzNjEuNDc1UTEyNjguNjUwOTk5OTk5OTk5OCAzODAuNDUgMTI0Ny40NjMzOTk5OTk5OTk5IDM5MS4wM1ExMjI2LjI3NTggNDAxLjYxIDEyMDMuNTA1Nzk5OTk5OTk5NyA0MDEuNjFRMTE4MC43MzU3OTk5OTk5OTk3IDQwMS42MSAxMTY0LjA4ODM5OTk5OTk5OTYgMzkxLjAzUTExNDcuNDQwOTk5OTk5OTk5OCAzODAuNDUgMTE0MC40NjA0OTk5OTk5OTk3IDM2MS40NzVRMTEzMy40Nzk5OTk5OTk5OTk4IDM0Mi41IDExMzguNjkxNzk5OTk5OTk5OCAzMTguODFaTTEyNjQuMjcxNzk5OTk5OTk5OCAzMTguODFRMTI2OC45Nzc1OTk5OTk5OTk3IDI5Ny40MiAxMjYwLjE3MDg5OTk5OTk5OTYgMjg0LjY1NVExMjUxLjM2NDE5OTk5OTk5OTggMjcxLjg5IDEyMzIuMDQ0MTk5OTk5OTk5OCAyNzEuODlRMTIxMi40OTQxOTk5OTk5OTk5IDI3MS44OSAxMTk4LjA5NjIgMjg0LjUzOTk5OTk5OTk5OTk2UTExODMuNjk4MTk5OTk5OTk5OCAyOTcuMTkgMTE3OC45NDE3OTk5OTk5OTk4IDMxOC44MVExMTc0LjIzNTk5OTk5OTk5OTkgMzQwLjIgMTE4My4wNDI3IDM1Mi45NjUwMDAwMDAwMDAwM1ExMTkxLjg0OTM5OTk5OTk5OTggMzY1LjczIDEyMTEuMzk5Mzk5OTk5OTk5OCAzNjUuNzNRMTIzMC43MTkzOTk5OTk5OTk3IDM2NS43MyAxMjQ1LjE2Nzk5OTk5OTk5OTcgMzUyLjg1UTEyNTkuNjE2NTk5OTk5OTk5OCAzMzkuOTcgMTI2NC4yNzE3OTk5OTk5OTk4IDMxOC44MVpNMTM5NS4yMTk5OTk5OTk5OTk4IDQwMC4wIDEzNzUuMDQ5IDMzOS4wNUgxMzY1LjYxOUwxMzUyLjIwOTk5OTk5OTk5OTggNDAwLjBIMTMxMi44Nzk5OTk5OTk5OTk5TDEzNDguNDAxMTk5OTk5OTk5OCAyMzguNTRIMTQxNC40MTEyUTE0MzMuNTAxMiAyMzguNTQgMTQ0NS40ODg4IDI0NS4yMDk5OTk5OTk5OTk5OFExNDU3LjQ3NjQgMjUxLjg4IDE0NjEuNTkxMSAyNjMuNDk1UTE0NjUuNzA1OCAyNzUuMTEgMTQ2Mi41Njg1OTk5OTk5OTk4IDI4OS4zN1ExNDU5LjAyNjYgMzA1LjQ3IDE0NDcuMTU4NTk5OTk5OTk5OCAzMTguMTJRMTQzNS4yOTA1OTk5OTk5OTk4IDMzMC43NyAxNDE2LjQxNjggMzM2LjA2TDE0MzkuNjEgNDAwLjBaTTEzNzEuNzQxNTk5OTk5OTk5OCAzMTEuMjJIMTM5Ni4xMjE2UTE0MDYuOTMxNiAzMTEuMjIgMTQxMy41MDA0IDMwNS45M1ExNDIwLjA2OTIgMzAwLjY0IDE0MjIuMTk0Mzk5OTk5OTk5OSAyOTAuOThRMTQyNC4yMTg0IDI4MS43OCAxNDE5Ljk3NzE5OTk5OTk5OTggMjc2LjQ5UTE0MTUuNzM1OTk5OTk5OTk5OSAyNzEuMiAxNDA0LjkyNiAyNzEuMkgxMzgwLjU0NTk5OTk5OTk5OThaTTE2MTkuMTExMTk5OTk5OTk5OCAyMzguNTQgMTYxMi4xNzg5OTk5OTk5OTk5IDI3MC4wNDk5OTk5OTk5OTk5NUgxNTY5LjM5OUwxNTQwLjgxIDQwMC4wSDE1MDEuNDc5OTk5OTk5OTk5OEwxNTMwLjA2OSAyNzAuMDQ5OTk5OTk5OTk5OTVIMTQ4Ny4yODg5OTk5OTk5OTk4TDE0OTQuMjIxMiAyMzguNTRaIiBmaWxsPSJ1cmwoI3JlZCkiLz4KICA8cGF0aCBkPSJNMTIwIDQ0MiBMMTM1OSA0MzYgTDEzNTkgNDQwIEwxMjAgNDQ2IFoiIGZpbGw9InVybCgjcnVsZSkiLz4KICA8cGF0aCBkPSJNMTQ3MS45MTY3OTk5OTk5OTk3IDQ0NS4zMSAxNDMzLjU4OTk5OTk5OTk5OTcgNTEyLjBIMTQxMy4yNTk5OTk5OTk5OTk4TDE0MDQuMjc2Nzk5OTk5OTk5OSA0NDUuMzFIMTQyMS41NjY3OTk5OTk5OTk4TDE0MjcuMDE5Nzk5OTk5OTk5OCA0OTUuNjZMMTQ1NC43MjE3OTk5OTk5OTk4IDQ0NS4zMVpNMTU1Ny45ODY4IDQ0NS4zMSAxNTQzLjMxNDk5OTk5OTk5OTggNTEyLjBIMTUyNy4wN0wxNTM1Ljg2ODkgNDcyLjAwNUwxNTEyLjE1NSA1MTIuMEgxNDk5LjA0NDk5OTk5OTk5OThMMTQ5Mi44NTQ3OTk5OTk5OTk4IDQ3MS45MDk5OTk5OTk5OTk5N0wxNDg0LjAzNDk5OTk5OTk5OTkgNTEyLjBIMTQ2Ny43OUwxNDgyLjQ2MTc5OTk5OTk5OTggNDQ1LjMxSDE1MDEuNjUxNzk5OTk5OTk5OUwxNTEwLjIwOTQgNDkxLjQ4TDE1MzguODkxNzk5OTk5OTk5OSA0NDUuMzFaIiBmaWxsPSJ1cmwoI3NpbHZlcikiLz48L2c+PC9zdmc+Cg==" alt="AutoSport VM"></a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menú</button>
     <nav class="nav" id="nav" aria-label="Principal">
       <a href="#coches">Coches</a>
+      <a href="#te-lo-buscamos">Te lo buscamos</a>
       <a href="#vender">Vende tu coche</a>
       <a href="#financiacion">Financiación</a>
       <a href="#contacto">Contacto</a>
+      <a href="#favoritos" aria-label="Favoritos">Favoritos<span class="n-fav num" id="n-fav"></span></a>
     </nav>
     <a class="btn btn-wa" id="wa-top" href="#">WhatsApp</a>
   </div>
@@ -307,6 +371,8 @@ section.bloque { padding: 56px 0; }
       <h3>Coches</h3>
       <ul>
         <li><a href="#coches">Todo el stock</a></li>
+        <li><a href="#te-lo-buscamos">Te lo buscamos</a></li>
+        <li><a href="#favoritos">Favoritos y comparar</a></li>
         <li><a href="#vender">Vende o cambia tu coche</a></li>
         <li><a href="#financiacion">Financiación</a></li>
       </ul>
@@ -327,6 +393,7 @@ section.bloque { padding: 56px 0; }
     </div>
   </div>
 </footer>
+<div id="cartel" role="dialog" aria-modal="true" aria-label="Cartel para la exposición"></div>
 <a class="btn btn-wa wa-flotante" id="wa-float" href="#" aria-label="Escribir por WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.4-.3z"/></svg><span>WhatsApp</span></a>
 
 <script>
@@ -335,31 +402,40 @@ const NEGOCIO = {
   whatsapp: "34641308956",
   telefono: "641 30 89 56",
   email: "info@ejemplo.com",
+  web: "https://javicantos1998.github.io/autosportvm/",
+  // Hoja de Google publicada como CSV (Archivo > Compartir > Publicar en la web > CSV). Vacío = usa el stock de abajo.
+  stockCsv: "",
+  opiniones: "https://www.google.com/maps/search/?api=1&query=AutoSport+VM+Andorra+Teruel",
   direccion: "C. Estación de Atocha, 36 · 44500 Andorra (Teruel)",
   horario: [["Lunes a viernes", "10:00–14:00 · 16:30–20:00"], ["Sábado", "10:00–14:00"], ["Domingo", "Cerrado"]]
 };
 
-/* ===== Stock de ejemplo: en la web real vendrá de la base de datos o del multipublicador ===== */
-const COCHES = [
-  // Fuente: anuncios de AutoSport VM en Coches.net (9/11/2026). Cambio completado con Instagram cuando aparece; si no, "Consultar".
-  { id: 1,  marca: "Ford", modelo: "Kuga", version: "2.0 TDCi 2WD Trend", anio: 2009, km: 188250, comb: "Diésel", cambio: "Manual", cv: 136, carroceria: "suv", dgt: "B", precio: 6999, estado: "disponible", llegada: 0, fotos: 10 },
-  { id: 2,  marca: "Nissan", modelo: "Qashqai", version: "1.5 dCi 360 S 4x2", anio: 2015, km: 150000, comb: "Diésel", cambio: "Manual", cv: 110, carroceria: "suv", dgt: "B", precio: 10200, estado: "disponible", llegada: 1, fotos: 12 },
-  { id: 3,  marca: "Audi", modelo: "A3 Sportback", version: "1.6 TDI S tronic Advanced", anio: 2015, km: 208600, comb: "Diésel", cambio: "Automático", cv: 110, carroceria: "compacto", dgt: "C", precio: 9999, estado: "disponible", llegada: 2, fotos: 12 },
-  { id: 4,  marca: "Nissan", modelo: "Qashqai", version: "1.6 dCi Tekna Sport 4x2", anio: 2012, km: 159300, comb: "Diésel", cambio: "Manual", cv: 130, carroceria: "suv", dgt: "B", precio: 8999, estado: "disponible", llegada: 3, fotos: 14 },
-  { id: 5,  marca: "Toyota", modelo: "RAV4", version: "120D AWD Advance", anio: 2014, km: 251180, comb: "Diésel", cambio: "Manual", cv: 124, carroceria: "suv", dgt: "B", precio: 9999, estado: "disponible", llegada: 4, fotos: 11 },
-  { id: 6,  marca: "Chevrolet", modelo: "Captiva", version: "2.0 VCDi LS 7 plazas", anio: 2010, km: 200000, comb: "Diésel", cambio: "Consultar", cv: 127, carroceria: "suv", dgt: "B", precio: 4999, estado: "disponible", llegada: 5, fotos: 11, plazas: 7 },
-  { id: 7,  marca: "Volkswagen", modelo: "Golf", version: "Advance 2.0 TDI DSG", anio: 2016, km: 165800, comb: "Diésel", cambio: "Automático", cv: 150, carroceria: "compacto", dgt: "C", precio: 11999, estado: "disponible", llegada: 6, fotos: 7 },
-  { id: 8,  marca: "Renault", modelo: "Scénic", version: "BOSE Energy dCi 130", anio: 2014, km: 142800, comb: "Diésel", cambio: "Consultar", cv: 130, carroceria: "monovolumen", dgt: "", precio: 7500, estado: "disponible", llegada: 7, fotos: 10 },
-  { id: 9,  marca: "Hyundai", modelo: "ix35", version: "1.7 CRDi Classic Sky 4x2", anio: 2011, km: 112400, comb: "Diésel", cambio: "Consultar", cv: 116, carroceria: "suv", dgt: "", precio: 8500, estado: "disponible", llegada: 8, fotos: 10 },
-  { id: 10, marca: "Opel", modelo: "Zafira Tourer", version: "1.6 CDTi 136 CV Selective", anio: 2016, km: 152800, comb: "Diésel", cambio: "Consultar", cv: 136, carroceria: "monovolumen", dgt: "C", precio: 8499, estado: "disponible", llegada: 9, fotos: 14 },
-  { id: 11, marca: "Volkswagen", modelo: "Golf", version: "Advance 1.6 TDI", anio: 2015, km: 193935, comb: "Diésel", cambio: "Consultar", cv: 105, carroceria: "compacto", dgt: "", precio: 8600, estado: "disponible", llegada: 10, fotos: 9 },
-  { id: 12, marca: "Ford", modelo: "Mondeo", version: "2.2 TDCi Trend", anio: 2005, km: 214500, comb: "Diésel", cambio: "Consultar", cv: 155, carroceria: "berlina", dgt: "", precio: 2499, estado: "disponible", llegada: 11, fotos: 7 },
-  { id: 13, marca: "Peugeot", modelo: "5008", version: "Premium 1.6 HDi 110", anio: 2010, km: 186000, comb: "Diésel", cambio: "Consultar", cv: 110, carroceria: "monovolumen", dgt: "C", precio: 5300, estado: "disponible", llegada: 12, fotos: 10 },
-  { id: 14, marca: "Land Rover", modelo: "Range Rover Sport", version: "4.4 SDV8 HSE", anio: 2014, km: 198000, comb: "Diésel", cambio: "Consultar", cv: 339, carroceria: "suv", dgt: "", precio: 17500, estado: "disponible", llegada: 13, fotos: 9 }
+/* ===== Stock (generado desde data/stock.json; se puede sustituir por la hoja de Google) ===== */
+const COCHES = [{"id": 1, "marca": "Ford", "modelo": "Kuga", "version": "2.0 TDCi 2WD Trend", "anio": 2009, "km": 188250, "comb": "Diésel", "cambio": "Manual", "cv": 136, "carroceria": "suv", "dgt": "B", "precio": 6999, "estado": "disponible", "color": "Blanco", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/De_vmWiDRq4/", "fotos": 6}, {"id": 2, "marca": "Nissan", "modelo": "Qashqai", "version": "1.5 dCi 360 S 4x2", "anio": 2015, "km": 150000, "comb": "Diésel", "cambio": "Manual", "cv": 110, "carroceria": "suv", "dgt": "B", "precio": 10200, "estado": "disponible", "color": "Blanco", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/DetwlmNDeSy/", "fotos": 6}, {"id": 3, "marca": "Audi", "modelo": "A3 Sportback", "version": "1.6 TDI S tronic Advanced", "anio": 2015, "km": 208600, "comb": "Diésel", "cambio": "Automático", "cv": 110, "carroceria": "compacto", "dgt": "C", "precio": 9999, "estado": "disponible", "color": "Blanco", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/DeM3_xkDWcR/", "fotos": 6}, {"id": 4, "marca": "Nissan", "modelo": "Qashqai", "version": "1.6 dCi Tekna Sport 4x2", "anio": 2012, "km": 159300, "comb": "Diésel", "cambio": "Manual", "cv": 130, "carroceria": "suv", "dgt": "B", "precio": 8999, "estado": "disponible", "color": "Rojo", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/DeOuEzGjf5b/", "fotos": 6}, {"id": 5, "marca": "Toyota", "modelo": "RAV4", "version": "120D AWD Advance", "anio": 2014, "km": 251180, "comb": "Diésel", "cambio": "Manual", "cv": 124, "carroceria": "suv", "dgt": "B", "precio": 9999, "estado": "disponible", "color": "Negro", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/Dd3ey9KEZE1/", "fotos": 6}, {"id": 6, "marca": "Chevrolet", "modelo": "Captiva", "version": "2.0 VCDi LS 7 plazas", "anio": 2010, "km": 200000, "comb": "Diésel", "cambio": "Consultar", "cv": 127, "carroceria": "suv", "dgt": "B", "precio": 4999, "estado": "disponible", "color": "Negro", "plazas": 7, "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 7, "marca": "Volkswagen", "modelo": "Golf", "version": "Advance 2.0 TDI DSG", "anio": 2016, "km": 165800, "comb": "Diésel", "cambio": "Automático", "cv": 150, "carroceria": "compacto", "dgt": "C", "precio": 11999, "estado": "disponible", "color": "Negro", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "https://www.instagram.com/p/Ddrh3vIkf9s/", "fotos": 6}, {"id": 8, "marca": "Renault", "modelo": "Scénic", "version": "BOSE Energy dCi 130", "anio": 2014, "km": 142800, "comb": "Diésel", "cambio": "Consultar", "cv": 130, "carroceria": "monovolumen", "dgt": "", "precio": 7500, "estado": "disponible", "color": "Gris", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 9, "marca": "Hyundai", "modelo": "ix35", "version": "1.7 CRDi Classic Sky 4x2", "anio": 2011, "km": 112400, "comb": "Diésel", "cambio": "Consultar", "cv": 116, "carroceria": "suv", "dgt": "", "precio": 8500, "estado": "disponible", "color": "Blanco", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 10, "marca": "Opel", "modelo": "Zafira Tourer", "version": "1.6 CDTi 136 CV Selective", "anio": 2016, "km": 152800, "comb": "Diésel", "cambio": "Consultar", "cv": 136, "carroceria": "monovolumen", "dgt": "C", "precio": 8499, "estado": "disponible", "color": "Plata", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 11, "marca": "Volkswagen", "modelo": "Golf", "version": "Advance 1.6 TDI", "anio": 2015, "km": 193935, "comb": "Diésel", "cambio": "Consultar", "cv": 105, "carroceria": "compacto", "dgt": "", "precio": 8600, "estado": "disponible", "color": "Blanco", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 12, "marca": "Ford", "modelo": "Mondeo", "version": "2.2 TDCi Trend", "anio": 2005, "km": 214500, "comb": "Diésel", "cambio": "Consultar", "cv": 155, "carroceria": "berlina", "dgt": "", "precio": 2499, "estado": "disponible", "color": "Gris", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 13, "marca": "Peugeot", "modelo": "5008", "version": "Premium 1.6 HDi 110", "anio": 2010, "km": 186000, "comb": "Diésel", "cambio": "Consultar", "cv": 110, "carroceria": "monovolumen", "dgt": "C", "precio": 5300, "estado": "disponible", "color": "Plata", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}, {"id": 14, "marca": "Land Rover", "modelo": "Range Rover Sport", "version": "4.4 SDV8 HSE", "anio": 2014, "km": 198000, "comb": "Diésel", "cambio": "Consultar", "cv": 339, "carroceria": "suv", "dgt": "", "precio": 17500, "estado": "disponible", "color": "Rojo", "plazas": "", "itv": "", "revision": "", "duenos": "", "video": "", "instagram": "", "fotos": 6}];
+const PAGINAS = ["ford-kuga-2009", "nissan-qashqai-2015", "audi-a3-sportback-2015", "nissan-qashqai-2012", "toyota-rav4-2014", "chevrolet-captiva-2010", "volkswagen-golf-2016", "renault-scenic-2014", "hyundai-ix35-2011", "opel-zafira-tourer-2016", "volkswagen-golf-2015", "ford-mondeo-2005", "peugeot-5008-2010", "land-rover-range-rover-sport-2014"];
+/* Vendidos recientes (Instagram, sept.–oct. 2026) */
+const VENDIDOS = [
+  { nombre: "Ford Kuga 1.5 TDCi 4x2", anio: 2017, km: 149500 },
+  { nombre: "Citroën C4 1.6 HDi", anio: 2011, km: 115700 },
+  { nombre: "Renault Clio 1.5 dCi", anio: 2014, km: 184000 },
+  { nombre: "Nissan 1.5 dCi Acenta", anio: 2013, km: 94000 },
+  { nombre: "Toyota Auris 1.4 D-4D", anio: 2008, km: 140500 }
 ];
-const COLORES = {1:"Blanco",2:"Blanco",3:"Blanco",4:"Rojo",5:"Negro",6:"Negro",7:"Negro",8:"Gris",9:"Blanco",10:"Plata",11:"Blanco",12:"Gris",13:"Plata",14:"Rojo"};
-COCHES.forEach(c => { c.color = "#B9BEC5"; c.nombreColor = COLORES[c.id]; c.nFotos = 6; });
-const foto = (c, n, mini) => `fotos/c${c.id}-${n}${mini ? "-m" : ""}.jpg`;
+const slugify = t => String(t).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function prepararCoches(lista, conMini) {
+  const usados = {};
+  lista.forEach((c, i) => {
+    c.id = +c.id; c.anio = +c.anio; c.km = +c.km; c.cv = +c.cv; c.precio = +c.precio;
+    c.nFotos = +c.fotos || 1; c.mini = conMini; c.llegada = i; c.nombreColor = c.color || "Consultar"; c.color = "#B9BEC5";
+    let sl = slugify(c.marca + " " + c.modelo + " " + c.anio);
+    if (usados[sl]) sl += "-" + c.id;
+    usados[sl] = 1; c.slug = sl;
+  });
+}
+prepararCoches(COCHES, true);
+const foto = (c, n, mini) => `fotos/c${c.id}-${n}${mini && c.mini ? "-m" : ""}.jpg`;
+const urlCoche = c => PAGINAS.includes(c.slug) ? `${c.slug}.html` : `#coche-${c.id}`;
+const urlAbs = c => NEGOCIO.web + (PAGINAS.includes(c.slug) ? `${c.slug}.html` : `#coche-${c.id}`);
 
 /* ===== Utilidades ===== */
 const $ = (s, r = document) => r.querySelector(s);
@@ -429,17 +505,29 @@ function cocheSVG(c, fondo = 0, flip = false) {
   </svg>`;
 }
 
+/* ===== Favoritos ===== */
+let favoritos = (() => { try { return (JSON.parse(localStorage.getItem("asvm-favoritos")) || []).map(Number); } catch (e) { return []; } })();
+const esFav = id => favoritos.includes(id);
+const ICONO_CORAZON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.4 8 3.4 4.5 6.9 4.5c2.1 0 3.6 1.2 5.1 3 1.5-1.8 3-3 5.1-3 3.5 0 5.5 3.5 4.2 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg>';
+const botonFav = (c, extra = "") => `<button class="fav ${extra}" type="button" data-fav="${c.id}" aria-pressed="${esFav(c.id)}" aria-label="Guardar ${esc(nombre(c))} en favoritos">${ICONO_CORAZON}</button>`;
+function toggleFav(id) {
+  favoritos = esFav(id) ? favoritos.filter(x => x !== id) : [...favoritos, id];
+  try { localStorage.setItem("asvm-favoritos", JSON.stringify(favoritos)); } catch (e) {}
+  contadorFav();
+}
+function contadorFav() { const n = $("#n-fav"); if (n) n.textContent = favoritos.filter(id => COCHES.some(c => c.id === id)).length || ""; }
+
 /* ===== Tarjeta ===== */
 function tarjeta(c) {
   const chip = c.estado === "reservado" ? `<span class="chip reservado">Reservado</span>` : (c.llegada <= 1 ? `<span class="chip nuevo">Recién llegado</span>` : "");
-  return `<a class="coche" href="#coche-${c.id}">
+  return `<article class="coche"><a class="enlace-coche" href="${urlCoche(c)}">
     <div class="foto"><img src="${foto(c, 1, true)}" alt="${esc(nombre(c) + " " + c.version)}" loading="lazy" width="560" height="420">${chip}</div>
     <div class="info">
       <div><h3>${esc(nombre(c))}</h3><p class="ver">${esc(c.version)}</p></div>
       <div class="tira num"><span>${c.anio}</span><span>${fmtKm(c.km)}</span><span>${c.comb}</span><span>${c.cambio === "Consultar" ? "Cambio: consultar" : c.cambio}</span></div>
       <div class="pie-coche"><span class="precio num">${fmtEuro(c.precio)}</span>${dgtSVG(c.dgt)}</div>
     </div>
-  </a>`;
+  </a>${botonFav(c)}</article>`;
 }
 
 /* ===== Estado de filtros ===== */
@@ -506,6 +594,15 @@ function vistaInicio() {
 
   <section class="bloque" style="padding-top:8px">
     <div class="wrap">
+      <div class="banda">
+        <div><h2>¿No está el que buscas? Te lo buscamos</h2><p>Dinos qué coche quieres y cuánto quieres gastar. Lo buscamos bajo pedido y te avisamos en cuanto tengamos opciones.</p></div>
+        <div class="acciones"><a class="btn btn-rojo" href="#te-lo-buscamos">Encargar mi coche</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque" style="padding-top:8px">
+    <div class="wrap">
       <div class="cab"><h2>Cómo comprar tu coche</h2></div>
       <div class="pasos">
         <div class="paso"><h3>Elige</h3><p>Filtra por precio, kilómetros o etiqueta DGT y guarda los que te gusten.</p></div>
@@ -527,10 +624,21 @@ function vistaInicio() {
 
   <section class="bloque" style="padding-top:8px">
     <div class="wrap">
+      <div class="cab"><h2>Vendidos recientemente</h2><p>Algunos de los últimos coches que han encontrado dueño.</p></div>
+      ${bloqueVendidos()}
+    </div>
+  </section>
+
+  <section class="bloque" style="padding-top:8px">
+    <div class="wrap">
       <div class="cab"><h2>Ven a verlos</h2></div>
       ${bloqueVisita()}
     </div>
   </section>`;
+}
+
+function bloqueVendidos() {
+  return `<div class="vendidos">${VENDIDOS.map(v => `<div class="vendido"><span class="sello">Vendido</span><div><b>${esc(v.nombre)}</b><span class="num">${v.anio} · ${fmtKm(v.km)}</span></div></div>`).join("")}</div>`;
 }
 
 function bloqueVisita() {
@@ -542,8 +650,9 @@ function bloqueVisita() {
         <div><dt>Horario (pendiente de confirmar)</dt><dd><table class="horario">${NEGOCIO.horario.map(h => `<tr><td>${h[0]}</td><td>${h[1]}</td></tr>`).join("")}</table></dd></div>
       </dl>
       <a class="btn btn-wa" href="${waLink("Hola, quiero pasar a ver coches. ¿Cuándo os viene bien?")}">Pedir cita por WhatsApp</a>
+      <a class="btn btn-linea" href="${NEGOCIO.opiniones}">Ver opiniones en Google</a>
     </div>
-    <div class="mapa"><div><strong>C. Estación de Atocha, 36 · Andorra (Teruel)</strong><p style="margin:10px 0 14px">Aquí irá el mapa de Google.</p><a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&query=C.+Estaci%C3%B3n+de+Atocha+36%2C+44500+Andorra%2C+Teruel">Cómo llegar</a></div></div>
+    <div class="mapa"><div><strong>C. Estación de Atocha, 36 · Andorra (Teruel)</strong><p style="margin:10px 0 14px">A un paso de Alcañiz, Calanda y todo el Bajo Aragón.</p><a class="btn btn-linea" href="https://www.google.com/maps/search/?api=1&query=C.+Estaci%C3%B3n+de+Atocha+36%2C+44500+Andorra%2C+Teruel">Cómo llegar</a></div></div>
   </div>`;
 }
 
@@ -574,16 +683,33 @@ function vistaCatalogo() {
         </div>
       </div>
       ${res.length ? `<div class="rejilla">${res.map(tarjeta).join("")}</div>` :
-        `<div class="vacio"><h2>Ningún coche con esos filtros</h2><p>Quita algún filtro o déjanos lo que buscas y te avisamos cuando entre.</p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn btn-linea" type="button" id="limpiar2">Quitar filtros</button><a class="btn btn-wa" href="${waLink("Hola, busco un coche con estas características: ")}">Avisadme por WhatsApp</a></div></div>`}
+        `<div class="vacio"><h2>Ningún coche con esos filtros</h2><p>Quita algún filtro o déjanos lo que buscas y te avisamos cuando entre.</p><div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><button class="btn btn-linea" type="button" id="limpiar2">Quitar filtros</button><a class="btn btn-wa" href="${waLink(textoAviso())}">Avísame cuando entre</a></div></div>`}
+      <div class="banda" style="margin-top:28px">
+        <div><h2>¿No encuentras el tuyo?</h2><p>Te avisamos cuando entre un coche con lo que estás buscando, o te lo buscamos bajo pedido.</p></div>
+        <div class="acciones"><a class="btn btn-wa" href="${waLink(textoAviso())}">Avísame cuando entre</a><a class="btn btn-plata" href="#te-lo-buscamos">Te lo buscamos</a></div>
+      </div>
     </div>
   </div>`;
 }
 
-let fotoActual = 0;
+function textoAviso() {
+  const p = [];
+  if (filtro.marca) p.push("marca " + filtro.marca);
+  if (filtro.carroceria) p.push(CARROCERIAS.find(x => x[0] === filtro.carroceria)[1]);
+  if (filtro.comb.length) p.push(filtro.comb.join(" o "));
+  if (filtro.cambio) p.push("cambio " + filtro.cambio.toLowerCase());
+  if (filtro.precioMax) p.push("hasta " + fmtEuro(+filtro.precioMax));
+  if (filtro.kmMax) p.push("menos de " + fmtKm(+filtro.kmMax));
+  if (filtro.anioMin) p.push("desde " + filtro.anioMin);
+  if (filtro.texto) p.push('"' + filtro.texto + '"');
+  return "Hola, avisadme cuando entre un coche" + (p.length ? ": " + p.join(", ") : " como este: ") + ".";
+}
+
+let fotoActual = 0, cocheActual = null;
 function vistaFicha(id) {
   const c = COCHES.find(x => x.id === id);
   if (!c) return `<div class="wrap pagina"><div><h1>Este coche ya no está disponible</h1><p class="texto" style="margin-top:12px">Puede que se haya vendido. Echa un vistazo al resto del stock.</p><p style="margin-top:20px"><a class="btn btn-rojo" href="#coches">Ver coches disponibles</a></p></div></div>`;
-  fotoActual = 0;
+  fotoActual = 0; cocheActual = c;
   const msg = `Hola, me interesa el ${nombre(c)} ${c.version} (${c.anio}, ${fmtKm(c.km)}) de ${fmtEuro(c.precio)}. ¿Sigue disponible?`;
   const similares = COCHES.filter(x => x.id !== c.id && (x.carroceria === c.carroceria || Math.abs(x.precio - c.precio) < 3000)).slice(0, 3);
   const dato = (t, v) => `<div><dt>${t}</dt><dd>${v}</dd></div>`;
@@ -604,6 +730,17 @@ function vistaFicha(id) {
           ${dato("Color", c.nombreColor)}${c.plazas ? dato("Plazas", c.plazas) : ""}${dato("Etiqueta DGT", c.dgt || "Consultar")}${dato("Garantía", "12 meses")}
         </dl>
         ${c.equipo ? `<h2>Equipamiento destacado</h2><ul class="equipo">${c.equipo.map(e => `<li>${esc(e)}</li>`).join("")}</ul>` : `<h2>Equipamiento</h2><p class="texto">Pregúntanos por el equipamiento completo y te mandamos fotos y detalles por WhatsApp.</p>`}
+        <h2>Estado y mantenimiento</h2>
+        ${(c.itv || c.revision || c.duenos) ? `<dl class="estado-lista">
+          ${c.revision ? `<div><dt>Qué le hemos hecho</dt><dd>${esc(c.revision)}</dd></div>` : ""}
+          ${c.itv ? `<div><dt>ITV en vigor hasta</dt><dd>${esc(c.itv)}</dd></div>` : ""}
+          ${c.duenos ? `<div><dt>Propietarios</dt><dd>${esc(c.duenos)}</dd></div>` : ""}
+        </dl>` : `<p class="texto">Pregúntanos por el mantenimiento, la ITV y el número de propietarios. Si quieres, te enseñamos el informe de la DGT del coche con su historial.</p>`}
+        <div class="acciones-sec">
+          <a class="btn btn-linea" href="${waLink(`Hola, ¿me podéis pasar el historial y el informe del ${nombre(c)} de ${c.anio}?`)}">Pedir historial del coche</a>
+          ${c.video ? `<a class="btn btn-linea" href="${esc(c.video)}">Ver vídeo del coche</a>` : ""}
+          ${c.instagram ? `<a class="btn btn-linea" href="${esc(c.instagram)}">Verlo en Instagram</a>` : ""}
+        </div>
         <h2>Lo que incluye</h2>
         <ul class="lista-check texto">
           <li>Garantía de 12 meses.</li>
@@ -614,7 +751,8 @@ function vistaFicha(id) {
       </div>
       <aside class="panel" aria-label="Precio y contacto">
         <div style="display:flex;justify-content:space-between;gap:12px;align-items:start">
-          <div><h1>${esc(nombre(c))}</h1><p class="ver">${esc(c.version)}</p></div>${dgtSVG(c.dgt)}
+          <div><h1>${esc(nombre(c))}</h1><p class="ver">${esc(c.version)}</p></div>
+          <div style="display:flex;gap:10px;align-items:center">${dgtSVG(c.dgt)}${botonFav(c, "fav-panel")}</div>
         </div>
         <div class="tira num"><span>${c.anio}</span><span>${fmtKm(c.km)}</span><span>${c.comb}</span><span>${c.cambio}</span></div>
         <p class="precio num">${fmtEuro(c.precio)} <small>IVA incluido</small></p>
@@ -623,6 +761,12 @@ function vistaFicha(id) {
           <a class="btn btn-wa" href="${waLink(msg)}">Preguntar por WhatsApp</a>
           <a class="btn btn-linea" href="tel:+${NEGOCIO.whatsapp}">Llamar al ${esc(NEGOCIO.telefono)}</a>
         </div>
+        <div class="acciones-sec" style="margin-top:0">
+          <button class="btn btn-linea" type="button" id="compartir">Copiar enlace</button>
+          <a class="btn btn-linea" href="https://wa.me/?text=${encodeURIComponent(nombre(c) + " " + c.anio + " · " + fmtEuro(c.precio) + " " + urlAbs(c))}">Compartir por WhatsApp</a>
+          <button class="btn btn-linea" type="button" id="abrir-cartel">Cartel con QR</button>
+        </div>
+        <p class="nota" id="aviso-compartir" aria-live="polite"></p>
         <p class="nota">¿Quieres pagarlo a plazos? <a class="enlace" href="#financiacion">Pregúntanos por la financiación</a>.</p>
         <form class="form" data-form="interes" novalidate style="padding:0;border:0">
           <h2 style="margin:6px 0 0;font-size:20px">O déjanos tus datos</h2>
@@ -673,6 +817,70 @@ function vistaVender() {
   </div>`;
 }
 
+function vistaTeLoBuscamos() {
+  const sel = (id, label, ops) => `<div class="campo"><label for="${id}">${label}</label><select id="${id}" name="${label}">${ops.map(o => `<option>${o}</option>`).join("")}</select></div>`;
+  return `<div class="wrap pagina">
+    <div class="texto">
+      <h1>Te lo buscamos</h1>
+      <p style="margin-top:16px">¿No tenemos el coche que quieres? Dinos qué buscas y cuánto quieres gastar, y lo buscamos por ti bajo pedido.</p>
+      <ul class="lista-check">
+        <li>Nos cuentas qué coche necesitas.</li>
+        <li>Te proponemos opciones que encajen con tu presupuesto.</li>
+        <li>Si te convence, lo traemos y te lo entregamos con garantía.</li>
+      </ul>
+      <p style="margin-top:16px">También te avisamos si entra en stock algo parecido.</p>
+    </div>
+    <form class="form" data-form="buscamos" novalidate>
+      <h2 style="font-size:24px;font-style:italic">¿Qué coche buscas?</h2>
+      <div class="fila2">
+        ${sel("tb-tipo", "Tipo", ["Me da igual", "Compacto", "Berlina", "SUV / 4x4", "Monovolumen", "Familiar", "Furgoneta"])}
+        ${sel("tb-comb", "Combustible", ["Me da igual", "Diésel", "Gasolina", "Híbrido", "Eléctrico"])}
+      </div>
+      <div class="fila2">
+        ${sel("tb-cambio", "Cambio", ["Me da igual", "Manual", "Automático"])}
+        <div class="campo"><label for="tb-presupuesto">Presupuesto máximo (€)</label><input id="tb-presupuesto" name="Presupuesto máximo" inputmode="numeric" placeholder="Ej. 10000" required></div>
+      </div>
+      <div class="fila2">
+        ${sel("tb-km", "Kilómetros", ["Me da igual", "Menos de 100.000 km", "Menos de 150.000 km", "Menos de 200.000 km"])}
+        ${sel("tb-anio", "Año", ["Me da igual", "Desde 2010", "Desde 2014", "Desde 2017", "Desde 2020"])}
+      </div>
+      <div class="campo"><label for="tb-modelo">Marca o modelo que te gusta (opcional)</label><input id="tb-modelo" name="Marca o modelo" placeholder="Ej. Nissan Qashqai, Seat León…"></div>
+      <label class="check" for="tb-aviso"><input id="tb-aviso" name="aviso" type="checkbox" checked><span>Avisadme también si entra en stock algo parecido.</span></label>
+      ${camposContacto("tb", "")}
+      <button class="btn btn-rojo" type="submit">Encargar mi coche</button>
+      <div data-salida></div>
+    </form>
+  </div>`;
+}
+
+function vistaFavoritos() {
+  const lista = favoritos.map(id => COCHES.find(c => c.id === id)).filter(Boolean);
+  if (!lista.length) return `<div class="wrap pagina"><div class="texto"><h1>Favoritos</h1><p style="margin-top:16px">Pulsa el corazón de un coche para guardarlo aquí y compararlo con otros.</p><p style="margin-top:20px"><a class="btn btn-rojo" href="#coches">Ver coches</a></p></div></div>`;
+  const comp = lista.slice(0, 4);
+  const mejor = (k, dir) => { const v = comp.map(c => c[k]); return dir < 0 ? Math.min(...v) : Math.max(...v); };
+  const fila = (t, f, k, dir) => `<tr><th scope="row">${t}</th>${comp.map(c => `<td class="${k && comp.length > 1 && c[k] === mejor(k, dir) ? "mejor" : ""}">${f(c)}</td>`).join("")}</tr>`;
+  const msg = "Hola, estoy dudando entre: " + comp.map(c => `${nombre(c)} ${c.anio} (${fmtEuro(c.precio)})`).join(", ") + ". ¿Me ayudáis a decidir?";
+  return `<div class="wrap" style="padding-top:36px;padding-bottom:64px">
+    <div class="barra"><div><h1>Favoritos</h1><p class="cuenta num">${lista.length} ${lista.length === 1 ? "coche guardado" : "coches guardados"}</p></div>
+      <a class="btn btn-wa" href="${waLink(msg)}">Preguntar por estos coches</a></div>
+    ${comp.length > 1 ? `<h2 style="font-size:26px;font-style:italic">Comparar</h2>
+    <div class="comparar"><table>
+      <thead><tr><td></td>${comp.map(c => `<th scope="col"><a href="${urlCoche(c)}"><img src="${foto(c, 1, true)}" alt=""></a><br>${esc(nombre(c))}</th>`).join("")}</tr></thead>
+      <tbody>
+        ${fila("Precio", c => fmtEuro(c.precio), "precio", -1)}
+        ${fila("Año", c => c.anio, "anio", 1)}
+        ${fila("Kilómetros", c => fmtKm(c.km), "km", -1)}
+        ${fila("Potencia", c => c.cv + " CV", "cv", 1)}
+        ${fila("Combustible", c => c.comb)}
+        ${fila("Cambio", c => c.cambio)}
+        ${fila("Carrocería", c => CARROCERIAS.find(x => x[0] === c.carroceria)[1])}
+        ${fila("Etiqueta DGT", c => c.dgt || "Consultar")}
+      </tbody></table></div>
+    ${lista.length > 4 ? `<p class="nota" style="margin-top:8px">Se comparan los 4 primeros favoritos.</p>` : ""}` : `<p class="nota">Guarda otro coche para compararlos.</p>`}
+    <div class="rejilla" style="margin-top:28px">${lista.map(tarjeta).join("")}</div>
+  </div>`;
+}
+
 function vistaFinanciacion() {
   return `<div class="wrap pagina">
     <div class="texto">
@@ -692,7 +900,7 @@ function vistaFinanciacion() {
 }
 
 function vistaContacto() {
-  return `<div class="wrap" style="padding:40px 0 64px">
+  return `<div class="wrap" style="padding-top:40px;padding-bottom:64px">
     <div class="pagina" style="padding:0 0 40px">
       <div class="texto"><h1>Contacto</h1><p style="margin-top:16px">La forma más rápida es WhatsApp. También puedes llamarnos o dejarnos un mensaje y te respondemos.</p>
         <p style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn btn-wa" href="${waLink("Hola, tengo una consulta.")}">Escribir por WhatsApp</a><a class="btn btn-linea" href="tel:+${NEGOCIO.whatsapp}">Llamar al ${esc(NEGOCIO.telefono)}</a></p>
@@ -707,14 +915,42 @@ function vistaContacto() {
   </div>`;
 }
 
+/* ===== Cartel con QR para la exposición ===== */
+function abrirCartel(c) {
+  const el = $("#cartel");
+  el.innerHTML = `<div class="cartel-hoja">
+    <div class="cartel-cab"><img src="${$(".brand img").src}" alt="AutoSport VM"><span>Andorra (Teruel)</span></div>
+    <div class="cartel-cuerpo">
+      <div><h2>${esc(nombre(c))}</h2><p style="font-size:20px">${esc(c.version)}</p></div>
+      <p style="font-size:20px" class="num">${c.anio} · ${fmtKm(c.km)} · ${c.comb} · ${c.cv} CV${c.cambio !== "Consultar" ? " · " + c.cambio : ""}</p>
+      <p class="precio num">${fmtEuro(c.precio)}</p>
+      <p style="font-size:18px">Garantía de 12 meses · IVA incluido</p>
+      <div class="cartel-qr"><div id="qr"></div><p><b>Escanéame</b> para ver todas las fotos y preguntar por WhatsApp.<br><span class="num">${esc(NEGOCIO.telefono)}</span></p></div>
+    </div>
+    <div class="cartel-botones"><button class="btn btn-linea" type="button" id="cerrar-cartel">Cerrar</button><button class="btn btn-rojo" type="button" id="imprimir-cartel">Imprimir</button></div>
+  </div>`;
+  el.classList.add("abierto");
+  if (window.QR_SVG && window.RUTA_INICIAL === "coche-" + c.id) $("#qr").innerHTML = window.QR_SVG;
+  else { try { new QRCode($("#qr"), { text: urlAbs(c), width: 300, height: 300, correctLevel: QRCode.CorrectLevel.M }); }
+  catch (e) { $("#qr").innerHTML = `<p class="nota" style="max-width:150px;word-break:break-all">${esc(urlAbs(c))}</p>`; } }
+  $("#cerrar-cartel").addEventListener("click", cerrarCartel);
+  $("#imprimir-cartel").addEventListener("click", () => { document.body.classList.add("imprimiendo"); try { window.print(); } catch (e) {} setTimeout(() => document.body.classList.remove("imprimiendo"), 500); });
+  $("#cerrar-cartel").focus();
+}
+function cerrarCartel() { $("#cartel").classList.remove("abierto"); $("#cartel").innerHTML = ""; }
+document.addEventListener("keydown", e => { if (e.key === "Escape" && $("#cartel").classList.contains("abierto")) cerrarCartel(); });
+
 /* ===== Enrutado por hash ===== */
 function ruta() {
-  const h = location.hash.slice(1) || "inicio";
+  if (window.RUTA_INICIAL && location.hash && location.hash !== "#" + window.RUTA_INICIAL) { location.href = "./" + location.hash; return; }
+  const h = location.hash.slice(1) || window.RUTA_INICIAL || "inicio";
   const app = $("#app");
   let html, nav = "";
   if (h === "coches") { html = vistaCatalogo(); nav = "coches"; }
   else if (/^coche-\d+$/.test(h)) { html = vistaFicha(+h.split("-")[1]); nav = "coches"; }
   else if (h === "vender") { html = vistaVender(); nav = "vender"; }
+  else if (h === "te-lo-buscamos") { html = vistaTeLoBuscamos(); nav = "te-lo-buscamos"; }
+  else if (h === "favoritos") { html = vistaFavoritos(); nav = "favoritos"; }
   else if (h === "financiacion") { html = vistaFinanciacion(); nav = "financiacion"; }
   else if (h === "contacto") { html = vistaContacto(); nav = "contacto"; }
   else html = vistaInicio();
@@ -758,7 +994,7 @@ function enlazar() {
   }
   const g = $(".galeria");
   if (g) {
-    const c = COCHES.find(x => x.id === +location.hash.split("-")[1]);
+    const c = cocheActual;
     const mostrar = i => {
       fotoActual = (i + c.nFotos) % c.nFotos;
       const p = $("#foto-principal"), img = p.querySelector("img");
@@ -771,6 +1007,12 @@ function enlazar() {
     g.querySelectorAll("[data-foto]").forEach(b => b.addEventListener("click", () => mostrar(+b.dataset.foto)));
     g.querySelectorAll("[data-paso]").forEach(b => b.addEventListener("click", () => mostrar(fotoActual + +b.dataset.paso)));
   }
+  if ($("#abrir-cartel")) $("#abrir-cartel").addEventListener("click", () => abrirCartel(cocheActual));
+  if ($("#compartir")) $("#compartir").addEventListener("click", async () => {
+    const url = urlAbs(cocheActual);
+    try { await navigator.clipboard.writeText(url); $("#aviso-compartir").textContent = "Enlace copiado."; }
+    catch (e) { $("#aviso-compartir").textContent = url; }
+  });
   document.querySelectorAll("form[data-form]").forEach(form => form.addEventListener("submit", e => {
     e.preventDefault();
     const salida = form.querySelector("[data-salida]");
@@ -782,7 +1024,19 @@ function enlazar() {
       falta[0].focus();
       return;
     }
-    salida.innerHTML = `<p class="aviso-ok" role="status">Datos correctos. Este prototipo todavía no envía mensajes: en la web real llegarán al correo de AutoSport VM.</p>`;
+    const titulos = { interes: "Me interesa un coche", vender: "Quiero vender mi coche", financiacion: "Quiero información sobre financiación", contacto: "Tengo una consulta", buscamos: "Busco un coche y me gustaría que me lo buscarais" };
+    let texto = "Hola. " + (titulos[form.dataset.form] || "Tengo una consulta") + ".";
+    if (form.dataset.form === "interes" && cocheActual) texto += ` ${nombre(cocheActual)} ${cocheActual.version} (${cocheActual.anio}, ${fmtEuro(cocheActual.precio)}).`;
+    form.querySelectorAll("input, select, textarea").forEach(el => {
+      if (["checkbox", "file"].includes(el.type) || !el.value.trim()) return;
+      const lab = form.querySelector(`label[for="${el.id}"]`);
+      const nombreCampo = lab ? lab.textContent.replace(" (opcional)", "") : el.name;
+      if (el.tagName === "SELECT" && el.value === "Me da igual") return;
+      texto += `\n${nombreCampo}: ${el.value.trim()}`;
+    });
+    if (form.querySelector("#tb-aviso")?.checked) texto += "\nAvisadme también si entra algo parecido.";
+    if (form.dataset.form === "vender") texto += "\n(Os mando las fotos por aquí.)";
+    salida.innerHTML = `<div class="aviso-ok" role="status"><p>Mensaje preparado. Pulsa para enviarlo por WhatsApp${form.dataset.form === "vender" ? " y adjunta las fotos en el chat" : ""}.</p><p style="margin-top:10px"><a class="btn btn-wa" href="${waLink(texto)}">Enviar por WhatsApp</a></p></div>`;
   }));
 }
 
@@ -790,8 +1044,43 @@ function enlazar() {
 $("#wa-top").href = waLink("Hola, tengo una consulta sobre vuestros coches.");
 $("#wa-float").href = waLink("Hola, tengo una consulta sobre vuestros coches.");
 $("#menu-btn").addEventListener("click", e => { const ab = $("#nav").classList.toggle("abierto"); e.currentTarget.setAttribute("aria-expanded", ab); });
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-fav]");
+  if (!b) return;
+  e.preventDefault(); e.stopPropagation();
+  const id = +b.dataset.fav; toggleFav(id);
+  document.querySelectorAll(`[data-fav="${id}"]`).forEach(x => x.setAttribute("aria-pressed", esFav(id)));
+  if ((location.hash.slice(1) || window.RUTA_INICIAL) === "favoritos") ruta();
+});
+
+/* Stock desde hoja de Google publicada como CSV */
+function parseCSV(t) {
+  const filas = []; let f = [], v = "", q = false;
+  for (let i = 0; i < t.length; i++) {
+    const ch = t[i];
+    if (q) { if (ch === '"' && t[i + 1] === '"') { v += '"'; i++; } else if (ch === '"') q = false; else v += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === ",") { f.push(v); v = ""; }
+    else if (ch === "\n" || ch === "\r") { if (ch === "\r" && t[i + 1] === "\n") i++; f.push(v); filas.push(f); f = []; v = ""; }
+    else v += ch;
+  }
+  if (v || f.length) { f.push(v); filas.push(f); }
+  const cab = filas.shift().map(x => x.trim());
+  return filas.filter(r => r.some(x => x.trim())).map(r => Object.fromEntries(cab.map((k, i) => [k, (r[i] || "").trim()])));
+}
+async function cargarStock() {
+  if (!NEGOCIO.stockCsv) return;
+  try {
+    const filas = parseCSV(await (await fetch(NEGOCIO.stockCsv, { cache: "no-store" })).text());
+    const nuevos = filas.filter(r => r.estado !== "vendido");
+    filas.filter(r => r.estado === "vendido").forEach(r => VENDIDOS.unshift({ nombre: `${r.marca} ${r.modelo} ${r.version}`, anio: +r.anio, km: +r.km }));
+    if (nuevos.length) { COCHES.length = 0; nuevos.forEach(r => COCHES.push(r)); prepararCoches(COCHES, false); }
+  } catch (e) { console.warn("No se pudo leer la hoja de stock; se usa el stock incluido.", e); }
+}
+
 window.addEventListener("hashchange", ruta);
-ruta();
+contadorFav();
+cargarStock().then(() => { contadorFav(); ruta(); });
 </script>
 </body>
 </html>
